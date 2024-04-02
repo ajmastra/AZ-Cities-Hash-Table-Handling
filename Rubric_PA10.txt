@@ -1,0 +1,40 @@
+Rubric - PA10
+
+Program Operations:  /5
+======================
+Program builds correctly, no errors or warnings: /3
+Program runs correctly:  /2
+
+Project functions:  /40
+=============================================
+
+addHashItem:  /4
+
+clearHashTable:  /4
+
+findMean:  /4
+
+findMedian:  /4
+
+generateHashIndex:  /4
+
+getHashDataFromFile:  /4
+
+initializeHashTable:   /4
+
+removeHashItem:  /4
+
+searchHashTable:  /4
+
+showHashTableStatus:  /4
+
+All other specifications followed:  /5
+=====================================
+- correct file upload
+- correct method names, variable names, etc.
+- appropriate use of constant value
+
+General Usage Rubric reductions
+===============================
+see GUR document
+

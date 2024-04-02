@@ -1,0 +1,450 @@
+Rank,City,Population
+1,Phoenix,1591119
+2,Tucson,538167
+3,Mesa,497752
+4,Chandler,272439
+5,Gilbert,262249
+6,Glendale,245685
+7,Scottsdale,238685
+8,Peoria,187733
+9,Tempe,178862
+10,Surprise,141875
+11,San Tan Valley,96127
+12,Yuma,95154
+13,Goodyear,93651
+14,Buckeye,89711
+15,Avondale,88065
+16,Flagstaff,76228
+17,Casas Adobes,70224
+18,Queen Creek,57728
+19,Maricopa,57075
+20,Lake Havasu City,56510
+21,Casa Grande,53488
+22,Marana,50834
+23,Catalina Foothills,50096
+24,Oro Valley,46515
+25,Prescott Valley,46014
+26,Prescott,45063
+27,Sierra Vista,44944
+28,Bullhead City,41064
+29,Apache Junction,38311
+30,Sun City,37693
+31,El Mirage,35410
+32,San Luis,35289
+33,Sahuarita,33524
+34,Kingman,32204
+35,Drexel Heights,30599
+36,Fortuna Foothills,26727
+37,Sun City West,26354
+38,Florence,25356
+39,Fountain Hills,23639
+40,Anthem,22750
+41,Rio Rico,20914
+42,Green Valley,20729
+43,Nogales,19829
+44,New River,17731
+45,Flowing Wells,16965
+46,Douglas,16470
+47,Payson,16229
+48,Fort Mohave,15872
+49,Eloy,15171
+50,Tanque Verde,14946
+51,Sierra Vista Southeast,14822
+52,Vail,14715
+53,Somerton,14126
+54,Sun Lakes,13912
+55,Coolidge,13347
+56,Valencia West,12887
+57,New Kingman-Butler,12858
+58,Chino Valley,12854
+59,Paradise Valley,12666
+60,Verde Village,12658
+61,Tucson Estates,12411
+62,Cottonwood city,12073
+63,Camp Verde,11942
+64,Show Low,11623
+65,Tucson Mountains,11451
+66,Saddlebrooke,11252
+67,Gold Canyon,11233
+68,Safford,9981
+69,Sedona,9723
+70,Corona de Tucson,9627
+71,Picture Rocks,9084
+72,Winslow,8961
+73,Arizona City,8950
+74,Tuba City,8748
+75,Golden Valley,7914
+76,Page,7466
+77,Wickenburg,7359
+78,Globe,7185
+79,Tolleson,7180
+80,Youngtown,6908
+81,Litchfield Park,6656
+82,Catalina,6472
+83,Village of Oak Creek (Big Park),6144
+84,Snowflake,6086
+85,Avra Valley,5916
+86,Williamson,5651
+87,Citrus Park,5640
+88,Guadalupe,5334
+89,Rincon Valley,5304
+90,Benson,5252
+91,Kayenta,5227
+92,Thatcher,5172
+93,Doney Park,5086
+94,Summit,4969
+95,Bisbee,4957
+96,Cave Creek,4933
+97,Holbrook,4826
+98,Three Points,4807
+99,South Tucson,4726
+100,Paulden,4602
+101,Eagar,4487
+102,San Carlos,4461
+103,Clarkdale,4419
+104,Lake Montezuma,4362
+105,Dewey-Humboldt,4304
+106,Whiteriver,4114
+107,Pinetop-Lakeside,4049
+108,Taylor,4020
+109,Clifton,3903
+110,Lake of the Woods,3897
+111,Chinle,3771
+112,Avenue B and C,3763
+113,Fort Defiance,3723
+114,Carefree,3642
+115,Cornville,3543
+116,San Manuel,3489
+117,St. Johns city,3416
+118,Red Rock CDP_A,3403
+119,Oracle,3335
+120,Parker,3324
+121,Willcox,3240
+122,Williams,3235
+123,Mohave Valley,2969
+124,Ajo,2944
+125,Kachina Village,2872
+126,Cordes Lakes,2862
+127,White Mountain Lake,2834
+128,Pima,2777
+129,Valle Vista,2746
+130,Colorado City,2744
+131,Whetstone,2734
+131,Wellton,2734
+133,Superior,2679
+134,Swift Trail Junction,2668
+135,Timberline-Fernwood,2637
+136,Central Heights-Midland City,2587
+137,Desert Hills,2564
+138,Linden,2523
+139,Sacaton,2506
+140,Black Canyon City,2485
+141,Star Valley,2474
+142,Rio Verde,2404
+143,Bagdad,2383
+144,Heber-Overgaard,2339
+145,Sells,2323
+146,Window Rock,2226
+147,Kearny,2198
+148,Springerville,2082
+149,Beaver Dam,2076
+150,Joseph City,2021
+151,Huachuca City,1939
+152,Fort Valley,1935
+153,Blackwater,1920
+154,North Fork,1852
+155,Scenic,1850
+156,Kaibito,1826
+157,Kaibab Estates West,1765
+158,Quartzsite,1745
+159,Gila Bend,1743
+160,Dolan Springs,1730
+161,Canyon Day,1725
+162,Pirtleville,1715
+163,Pine,1697
+164,Congress,1665
+165,First Mesa,1660
+166,Lukachukai,1637
+167,Spring Valley,1636
+168,Second Mesa,1606
+169,Peridot,1603
+170,Mountain View Ranches,1596
+171,Grand Canyon Village,1591
+172,Pinetop Country Club,1573
+173,Cienega Springs,1506
+174,LeChee,1499
+175,Miami,1490
+176,Meadview,1487
+177,Tsaile,1456
+178,Centennial Park,1445
+179,Tonto Basin,1437
+180,Cibecue,1417
+181,St. David,1411
+182,Red Lake,1382
+183,Six Shooter Canyon,1326
+184,Peach Springs,1315
+185,Morenci,1307
+186,Dilkon,1297
+187,Parks,1276
+188,Tubac,1274
+189,Casa Blanca,1273
+190,Moenkopi,1258
+191,Bylas,1253
+192,Mescal,1225
+193,Mammoth,1219
+194,Bouse,1153
+195,Leupp,1149
+196,Fredonia,1128
+197,Bellemont,1115
+198,Mayer,1105
+199,Cactus Flats,1099
+200,Wagon Wheel,1096
+201,Golden Shores,1089
+202,Seven Mile,1074
+203,Claypool,1063
+204,Ak-Chin Village,1043
+205,McNary,1023
+206,Mesa del Caballo,1010
+207,Shongopovi,1003
+208,Naco,1001
+209,Blue Ridge,981
+210,Tombstone,978
+211,Ehrenberg,959
+212,Donovan Estates,942
+213,Kykotsmovi Village,940
+214,Strawberry,935
+215,Chilchinbito,916
+216,Hotevilla-Bacavi,910
+217,Komatke,905
+218,Hondah,896
+219,Patagonia,886
+220,Cameron,882
+220,Gila Crossing,882
+220,Salome,882
+223,Wilhoit,881
+224,Arivaca Junction,879
+225,Mountainaire,878
+226,Pinon,860
+227,Ganado,847
+228,Houck,841
+229,Parker Strip,803
+230,Bluewater,802
+231,Gadsden,801
+232,Duncan,787
+233,Whitecone,786
+234,Munds Park,780
+235,Teec Nos Pos,766
+236,Sanders,758
+237,Santa Rosa,743
+238,Sonoita,730
+239,St. Michaels,727
+239,Queen Valley,727
+241,Arizona Village,718
+242,Sawmill,716
+243,Dennehotso,709
+244,Yarnell,705
+245,Rancho Mesa Verde,701
+245,Nelson,701
+247,Sunsites,693
+248,Seligman,691
+249,Wittmann,686
+250,Many Farms,680
+251,Brenda,665
+252,Rainbow City,659
+253,Circle City,657
+254,Ash Fork,652
+255,Miracle Valley,645
+256,Roosevelt Estates,633
+257,Upper Santan Village,630
+258,Peeples Valley,627
+259,Round Rock,622
+260,Maricopa Colony,618
+261,Willow Valley,609
+262,Red Mesa,608
+263,Walnut Creek,592
+264,Dudleyville,590
+265,Burnside,579
+266,J-Six Ranchettes,563
+267,La Paz Valley,562
+268,Solomon,555
+268,Cactus Forest,555
+270,Aguila,551
+271,Turkey Creek,549
+272,El Prado Estates,542
+273,Rock Point,540
+274,Low Mountain,538
+275,Arivaca,527
+276,Icehouse Canyon,524
+277,Mesquite Creek,523
+278,Vicksburg,521
+278,St. Johns CDP,521
+280,Gisela,519
+281,Nazlini,512
+282,Tacna,502
+283,Tolani Lake,496
+284,Round Valley,493
+285,Pinedale,486
+286,Sacaton Flats Village,483
+287,Wenden,456
+288,Topawa,452
+289,Tees Toh,445
+289,Jerome,445
+291,York,434
+291,Central,434
+293,East Fork,433
+294,Stotonic Village,431
+295,Stanfield,428
+296,Cane Beds,413
+297,Cedar Creek,407
+298,Elephant Head,405
+299,Keams Canyon,397
+300,South Komelik,384
+301,Fort Thomas,383
+302,San Jose,380
+303,Young,375
+304,Hayden,374
+305,Wheatfields,371
+306,Steamboat,369
+307,Bitter Springs,368
+308,Nutrioso,365
+309,Orange Grove Mobile Manor,364
+310,Greenehaven,359
+311,Rough Rock,353
+312,Shonto,347
+313,Indian Wells,341
+314,Clay Springs,339
+315,Vernon,338
+316,Greasewood,333
+317,Hackberry,328
+318,Tusayan,323
+319,Bowie,320
+319,Lazy Y U,320
+321,Clacks Canyon,317
+322,Picacho,315
+323,Sacate Village,311
+324,Elfrida,306
+324,Winslow West,306
+326,Oak Creek Canyon,303
+327,Chloride,296
+327,Pisinemo,296
+327,Wall Lane,296
+330,So-Hi,292
+330,Winkelman,292
+332,San Miguel,288
+333,Cornfields,286
+334,Carrizo,283
+335,Kino Springs,277
+336,Dateland,276
+336,East Globe,276
+338,Wellton Hills,264
+339,Tonalea,256
+340,Sunizona,254
+341,White Hills,253
+342,Lower Santan Village,252
+343,Palominas,246
+344,Goodyear Village,225
+345,Cottonwood CDP,224
+346,Crystal Beach,222
+346,Pinal,222
+348,Forest Lakes,220
+349,Chuichu,214
+349,Jeddito,214
+351,Dripping Springs,213
+352,Elgin,210
+353,Top-of-the-World,204
+354,Morristown,201
+355,Freedom Acres,196
+356,Jakes Corner,194
+357,San Simon,191
+358,Haivana Nakya,190
+358,Poston,190
+360,Oxbow Estates,184
+361,Fort Apache,182
+362,McNeal,181
+362,Kaibab,181
+364,Cutter,178
+365,Yuma Proving Ground,177
+366,Klagetoh,164
+367,Maish Vaya,156
+368,Tonto Village,153
+368,Del Muerto,153
+370,Shumway,146
+370,Vaiva Vo,146
+372,Deer Creek,145
+372,Drysdale,145
+374,Beaver Valley,144
+375,Pinion Pines,142
+375,Cibola,142
+377,Hard Rock,141
+378,Alpine,136
+379,Mead Ranch,128
+379,Whispering Pines,128
+381,Antares,127
+382,Seba Dalkai,122
+383,Sehili,121
+384,Sweet Water Village,119
+385,Ventana,116
+386,Ali Chuk,115
+387,Arlington,113
+388,Christopher Creek,112
+389,Copper Hill,108
+390,Sun Valley,106
+391,Katherine,105
+392,Wintersburg,102
+392,Franklin,102
+394,Valle,101
+395,Gu Oidak,100
+395,Rock House,100
+397,Pine Lake,99
+398,Wet Camp Village,94
+399,East Verde Estates,93
+400,Moccasin,91
+400,Bryce,91
+402,Why,88
+403,Tumacacori-Carmen,86
+404,Kohls Ranch,84
+405,Nolic,81
+405,Theba,81
+407,Ali Molina,79
+408,Chiawuli Tak,78
+409,Amado,76
+410,Crozier,74
+410,Littlefield,74
+412,Red Rock CDP_B,71
+413,Campo Bonito,68
+414,Truxton,67
+415,Yucca,65
+416,Flowing Springs,61
+417,Martinez Lake,59
+418,Kleindale,56
+419,Woodruff,54
+420,Santa Cruz,53
+421,Utting,52
+422,Anegam,50
+423,Beyerville,49
+424,Wahak Hotrontk,47
+425,Mojave Ranch Estates,45
+426,Oatman,43
+427,Padre Ranchitos,39
+428,Mormon Lake,38
+429,Ko Vaya,37
+430,Haigler Creek,35
+431,Kaka,34
+432,Dragoon,33
+433,Wikieup,32
+434,El Capitan,29
+435,Valentine,28
+436,Summerhaven,26
+437,Cowlic,23
+438,Alamo Lake,20
+439,Washington Park,19
+440,Charco,18
+441,Oljato-Monument Valley,17
+442,Hunter Creek,16
+443,Oak Springs,15
+443,Rye,15
+445,Geronimo Estates,14
+446,Ali Chukson,13
+446,Tonopah,13
+448,Buckshot,7
+449,Wide Ruins,6

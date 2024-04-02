@@ -1,0 +1,475 @@
+Hash Table Analysis
+===================
+
+Begin Loading Data From File . . .
+
+  1) City name: Phoenix, Population: 1591119
+  2) City name: Tucson, Population: 538167
+  3) City name: Mesa, Population: 497752
+  4) City name: Chandler, Population: 272439
+  5) City name: Gilbert, Population: 262249
+  6) City name: Glendale, Population: 245685
+  7) City name: Scottsdale, Population: 238685
+  8) City name: Peoria, Population: 187733
+  9) City name: Tempe, Population: 178862
+ 10) City name: Surprise, Population: 141875
+ 11) City name: San Tan Valley, Population: 96127
+ 12) City name: Yuma, Population: 95154
+ 13) City name: Goodyear, Population: 93651
+ 14) City name: Buckeye, Population: 89711
+ 15) City name: Avondale, Population: 88065
+ 16) City name: Flagstaff, Population: 76228
+ 17) City name: Casas Adobes, Population: 70224
+ 18) City name: Queen Creek, Population: 57728
+ 19) City name: Maricopa, Population: 57075
+ 20) City name: Lake Havasu City, Population: 56510
+ 21) City name: Casa Grande, Population: 53488
+ 22) City name: Marana, Population: 50834
+ 23) City name: Catalina Foothills, Population: 50096
+ 24) City name: Oro Valley, Population: 46515
+ 25) City name: Prescott Valley, Population: 46014
+ 26) City name: Prescott, Population: 45063
+ 27) City name: Sierra Vista, Population: 44944
+ 28) City name: Bullhead City, Population: 41064
+ 29) City name: Apache Junction, Population: 38311
+ 30) City name: Sun City, Population: 37693
+ 31) City name: El Mirage, Population: 35410
+ 32) City name: San Luis, Population: 35289
+ 33) City name: Sahuarita, Population: 33524
+ 34) City name: Kingman, Population: 32204
+ 35) City name: Drexel Heights, Population: 30599
+ 36) City name: Fortuna Foothills, Population: 26727
+ 37) City name: Sun City West, Population: 26354
+ 38) City name: Florence, Population: 25356
+ 39) City name: Fountain Hills, Population: 23639
+ 40) City name: Anthem, Population: 22750
+ 41) City name: Rio Rico, Population: 20914
+ 42) City name: Green Valley, Population: 20729
+ 43) City name: Nogales, Population: 19829
+ 44) City name: New River, Population: 17731
+ 45) City name: Flowing Wells, Population: 16965
+ 46) City name: Douglas, Population: 16470
+ 47) City name: Payson, Population: 16229
+ 48) City name: Fort Mohave, Population: 15872
+ 49) City name: Eloy, Population: 15171
+ 50) City name: Tanque Verde, Population: 14946
+ 51) City name: Sierra Vista Southeast, Population: 14822
+ 52) City name: Vail, Population: 14715
+ 53) City name: Somerton, Population: 14126
+ 54) City name: Sun Lakes, Population: 13912
+ 55) City name: Coolidge, Population: 13347
+ 56) City name: Valencia West, Population: 12887
+ 57) City name: New Kingman-Butler, Population: 12858
+ 58) City name: Chino Valley, Population: 12854
+ 59) City name: Paradise Valley, Population: 12666
+ 60) City name: Verde Village, Population: 12658
+ 61) City name: Tucson Estates, Population: 12411
+ 62) City name: Cottonwood city, Population: 12073
+ 63) City name: Camp Verde, Population: 11942
+ 64) City name: Show Low, Population: 11623
+ 65) City name: Tucson Mountains, Population: 11451
+ 66) City name: Saddlebrooke, Population: 11252
+ 67) City name: Gold Canyon, Population: 11233
+ 68) City name: Safford, Population: 9981
+ 69) City name: Sedona, Population: 9723
+ 70) City name: Corona de Tucson, Population: 9627
+ 71) City name: Picture Rocks, Population: 9084
+ 72) City name: Winslow, Population: 8961
+ 73) City name: Arizona City, Population: 8950
+ 74) City name: Tuba City, Population: 8748
+ 75) City name: Golden Valley, Population: 7914
+ 76) City name: Page, Population: 7466
+ 77) City name: Wickenburg, Population: 7359
+ 78) City name: Globe, Population: 7185
+ 79) City name: Tolleson, Population: 7180
+ 80) City name: Youngtown, Population: 6908
+ 81) City name: Litchfield Park, Population: 6656
+ 82) City name: Catalina, Population: 6472
+ 83) City name: Village of Oak Creek (Big Park), Population: 6144
+ 84) City name: Snowflake, Population: 6086
+ 85) City name: Avra Valley, Population: 5916
+ 86) City name: Williamson, Population: 5651
+ 87) City name: Citrus Park, Population: 5640
+ 88) City name: Guadalupe, Population: 5334
+ 89) City name: Rincon Valley, Population: 5304
+ 90) City name: Benson, Population: 5252
+ 91) City name: Kayenta, Population: 5227
+ 92) City name: Thatcher, Population: 5172
+ 93) City name: Doney Park, Population: 5086
+ 94) City name: Summit, Population: 4969
+ 95) City name: Bisbee, Population: 4957
+ 96) City name: Cave Creek, Population: 4933
+ 97) City name: Holbrook, Population: 4826
+ 98) City name: Three Points, Population: 4807
+ 99) City name: South Tucson, Population: 4726
+100) City name: Paulden, Population: 4602
+101) City name: Eagar, Population: 4487
+102) City name: San Carlos, Population: 4461
+103) City name: Clarkdale, Population: 4419
+104) City name: Lake Montezuma, Population: 4362
+105) City name: Dewey-Humboldt, Population: 4304
+106) City name: Whiteriver, Population: 4114
+107) City name: Pinetop-Lakeside, Population: 4049
+108) City name: Taylor, Population: 4020
+109) City name: Clifton, Population: 3903
+110) City name: Lake of the Woods, Population: 3897
+111) City name: Chinle, Population: 3771
+112) City name: Avenue B and C, Population: 3763
+113) City name: Fort Defiance, Population: 3723
+114) City name: Carefree, Population: 3642
+115) City name: Cornville, Population: 3543
+116) City name: San Manuel, Population: 3489
+117) City name: St. Johns city, Population: 3416
+118) City name: Red Rock CDP_A, Population: 3403
+119) City name: Oracle, Population: 3335
+120) City name: Parker, Population: 3324
+121) City name: Willcox, Population: 3240
+122) City name: Williams, Population: 3235
+123) City name: Mohave Valley, Population: 2969
+124) City name: Ajo, Population: 2944
+125) City name: Kachina Village, Population: 2872
+126) City name: Cordes Lakes, Population: 2862
+127) City name: White Mountain Lake, Population: 2834
+128) City name: Pima, Population: 2777
+129) City name: Valle Vista, Population: 2746
+130) City name: Colorado City, Population: 2744
+131) City name: Whetstone, Population: 2734
+131) City name: Wellton, Population: 2734
+133) City name: Superior, Population: 2679
+134) City name: Swift Trail Junction, Population: 2668
+135) City name: Timberline-Fernwood, Population: 2637
+136) City name: Central Heights-Midland City, Population: 2587
+137) City name: Desert Hills, Population: 2564
+138) City name: Linden, Population: 2523
+139) City name: Sacaton, Population: 2506
+140) City name: Black Canyon City, Population: 2485
+141) City name: Star Valley, Population: 2474
+142) City name: Rio Verde, Population: 2404
+143) City name: Bagdad, Population: 2383
+144) City name: Heber-Overgaard, Population: 2339
+145) City name: Sells, Population: 2323
+146) City name: Window Rock, Population: 2226
+147) City name: Kearny, Population: 2198
+148) City name: Springerville, Population: 2082
+149) City name: Beaver Dam, Population: 2076
+150) City name: Joseph City, Population: 2021
+151) City name: Huachuca City, Population: 1939
+152) City name: Fort Valley, Population: 1935
+153) City name: Blackwater, Population: 1920
+154) City name: North Fork, Population: 1852
+155) City name: Scenic, Population: 1850
+156) City name: Kaibito, Population: 1826
+157) City name: Kaibab Estates West, Population: 1765
+158) City name: Quartzsite, Population: 1745
+159) City name: Gila Bend, Population: 1743
+160) City name: Dolan Springs, Population: 1730
+161) City name: Canyon Day, Population: 1725
+162) City name: Pirtleville, Population: 1715
+163) City name: Pine, Population: 1697
+164) City name: Congress, Population: 1665
+165) City name: First Mesa, Population: 1660
+166) City name: Lukachukai, Population: 1637
+167) City name: Spring Valley, Population: 1636
+168) City name: Second Mesa, Population: 1606
+169) City name: Peridot, Population: 1603
+170) City name: Mountain View Ranches, Population: 1596
+171) City name: Grand Canyon Village, Population: 1591
+172) City name: Pinetop Country Club, Population: 1573
+173) City name: Cienega Springs, Population: 1506
+174) City name: LeChee, Population: 1499
+175) City name: Miami, Population: 1490
+176) City name: Meadview, Population: 1487
+177) City name: Tsaile, Population: 1456
+178) City name: Centennial Park, Population: 1445
+179) City name: Tonto Basin, Population: 1437
+180) City name: Cibecue, Population: 1417
+181) City name: St. David, Population: 1411
+182) City name: Red Lake, Population: 1382
+183) City name: Six Shooter Canyon, Population: 1326
+184) City name: Peach Springs, Population: 1315
+185) City name: Morenci, Population: 1307
+186) City name: Dilkon, Population: 1297
+187) City name: Parks, Population: 1276
+188) City name: Tubac, Population: 1274
+189) City name: Casa Blanca, Population: 1273
+190) City name: Moenkopi, Population: 1258
+191) City name: Bylas, Population: 1253
+192) City name: Mescal, Population: 1225
+193) City name: Mammoth, Population: 1219
+194) City name: Bouse, Population: 1153
+195) City name: Leupp, Population: 1149
+196) City name: Fredonia, Population: 1128
+197) City name: Bellemont, Population: 1115
+198) City name: Mayer, Population: 1105
+199) City name: Cactus Flats, Population: 1099
+200) City name: Wagon Wheel, Population: 1096
+201) City name: Golden Shores, Population: 1089
+202) City name: Seven Mile, Population: 1074
+203) City name: Claypool, Population: 1063
+204) City name: Ak-Chin Village, Population: 1043
+205) City name: McNary, Population: 1023
+206) City name: Mesa del Caballo, Population: 1010
+207) City name: Shongopovi, Population: 1003
+208) City name: Naco, Population: 1001
+209) City name: Blue Ridge, Population: 981
+210) City name: Tombstone, Population: 978
+211) City name: Ehrenberg, Population: 959
+212) City name: Donovan Estates, Population: 942
+213) City name: Kykotsmovi Village, Population: 940
+214) City name: Strawberry, Population: 935
+215) City name: Chilchinbito, Population: 916
+216) City name: Hotevilla-Bacavi, Population: 910
+217) City name: Komatke, Population: 905
+218) City name: Hondah, Population: 896
+219) City name: Patagonia, Population: 886
+220) City name: Cameron, Population: 882
+220) City name: Gila Crossing, Population: 882
+220) City name: Salome, Population: 882
+223) City name: Wilhoit, Population: 881
+224) City name: Arivaca Junction, Population: 879
+225) City name: Mountainaire, Population: 878
+226) City name: Pinon, Population: 860
+227) City name: Ganado, Population: 847
+228) City name: Houck, Population: 841
+229) City name: Parker Strip, Population: 803
+230) City name: Bluewater, Population: 802
+231) City name: Gadsden, Population: 801
+232) City name: Duncan, Population: 787
+233) City name: Whitecone, Population: 786
+234) City name: Munds Park, Population: 780
+235) City name: Teec Nos Pos, Population: 766
+236) City name: Sanders, Population: 758
+237) City name: Santa Rosa, Population: 743
+238) City name: Sonoita, Population: 730
+239) City name: St. Michaels, Population: 727
+239) City name: Queen Valley, Population: 727
+241) City name: Arizona Village, Population: 718
+242) City name: Sawmill, Population: 716
+243) City name: Dennehotso, Population: 709
+244) City name: Yarnell, Population: 705
+245) City name: Rancho Mesa Verde, Population: 701
+245) City name: Nelson, Population: 701
+247) City name: Sunsites, Population: 693
+248) City name: Seligman, Population: 691
+249) City name: Wittmann, Population: 686
+250) City name: Many Farms, Population: 680
+251) City name: Brenda, Population: 665
+252) City name: Rainbow City, Population: 659
+253) City name: Circle City, Population: 657
+254) City name: Ash Fork, Population: 652
+255) City name: Miracle Valley, Population: 645
+256) City name: Roosevelt Estates, Population: 633
+257) City name: Upper Santan Village, Population: 630
+258) City name: Peeples Valley, Population: 627
+259) City name: Round Rock, Population: 622
+260) City name: Maricopa Colony, Population: 618
+261) City name: Willow Valley, Population: 609
+262) City name: Red Mesa, Population: 608
+263) City name: Walnut Creek, Population: 592
+264) City name: Dudleyville, Population: 590
+265) City name: Burnside, Population: 579
+266) City name: J-Six Ranchettes, Population: 563
+267) City name: La Paz Valley, Population: 562
+268) City name: Solomon, Population: 555
+268) City name: Cactus Forest, Population: 555
+270) City name: Aguila, Population: 551
+271) City name: Turkey Creek, Population: 549
+272) City name: El Prado Estates, Population: 542
+273) City name: Rock Point, Population: 540
+274) City name: Low Mountain, Population: 538
+275) City name: Arivaca, Population: 527
+276) City name: Icehouse Canyon, Population: 524
+277) City name: Mesquite Creek, Population: 523
+278) City name: Vicksburg, Population: 521
+278) City name: St. Johns CDP, Population: 521
+280) City name: Gisela, Population: 519
+281) City name: Nazlini, Population: 512
+282) City name: Tacna, Population: 502
+283) City name: Tolani Lake, Population: 496
+284) City name: Round Valley, Population: 493
+285) City name: Pinedale, Population: 486
+286) City name: Sacaton Flats Village, Population: 483
+287) City name: Wenden, Population: 456
+288) City name: Topawa, Population: 452
+289) City name: Tees Toh, Population: 445
+289) City name: Jerome, Population: 445
+291) City name: York, Population: 434
+291) City name: Central, Population: 434
+293) City name: East Fork, Population: 433
+294) City name: Stotonic Village, Population: 431
+295) City name: Stanfield, Population: 428
+296) City name: Cane Beds, Population: 413
+297) City name: Cedar Creek, Population: 407
+298) City name: Elephant Head, Population: 405
+299) City name: Keams Canyon, Population: 397
+300) City name: South Komelik, Population: 384
+301) City name: Fort Thomas, Population: 383
+302) City name: San Jose, Population: 380
+303) City name: Young, Population: 375
+304) City name: Hayden, Population: 374
+305) City name: Wheatfields, Population: 371
+306) City name: Steamboat, Population: 369
+307) City name: Bitter Springs, Population: 368
+308) City name: Nutrioso, Population: 365
+309) City name: Orange Grove Mobile Manor, Population: 364
+310) City name: Greenehaven, Population: 359
+311) City name: Rough Rock, Population: 353
+312) City name: Shonto, Population: 347
+313) City name: Indian Wells, Population: 341
+314) City name: Clay Springs, Population: 339
+315) City name: Vernon, Population: 338
+316) City name: Greasewood, Population: 333
+317) City name: Hackberry, Population: 328
+318) City name: Tusayan, Population: 323
+319) City name: Bowie, Population: 320
+319) City name: Lazy Y U, Population: 320
+321) City name: Clacks Canyon, Population: 317
+322) City name: Picacho, Population: 315
+323) City name: Sacate Village, Population: 311
+324) City name: Elfrida, Population: 306
+324) City name: Winslow West, Population: 306
+326) City name: Oak Creek Canyon, Population: 303
+327) City name: Chloride, Population: 296
+327) City name: Pisinemo, Population: 296
+327) City name: Wall Lane, Population: 296
+330) City name: So-Hi, Population: 292
+330) City name: Winkelman, Population: 292
+332) City name: San Miguel, Population: 288
+333) City name: Cornfields, Population: 286
+334) City name: Carrizo, Population: 283
+335) City name: Kino Springs, Population: 277
+336) City name: Dateland, Population: 276
+336) City name: East Globe, Population: 276
+338) City name: Wellton Hills, Population: 264
+339) City name: Tonalea, Population: 256
+340) City name: Sunizona, Population: 254
+341) City name: White Hills, Population: 253
+342) City name: Lower Santan Village, Population: 252
+343) City name: Palominas, Population: 246
+344) City name: Goodyear Village, Population: 225
+345) City name: Cottonwood CDP, Population: 224
+346) City name: Crystal Beach, Population: 222
+346) City name: Pinal, Population: 222
+348) City name: Forest Lakes, Population: 220
+349) City name: Chuichu, Population: 214
+349) City name: Jeddito, Population: 214
+351) City name: Dripping Springs, Population: 213
+352) City name: Elgin, Population: 210
+353) City name: Top-of-the-World, Population: 204
+354) City name: Morristown, Population: 201
+355) City name: Freedom Acres, Population: 196
+356) City name: Jakes Corner, Population: 194
+357) City name: San Simon, Population: 191
+358) City name: Haivana Nakya, Population: 190
+358) City name: Poston, Population: 190
+360) City name: Oxbow Estates, Population: 184
+361) City name: Fort Apache, Population: 182
+362) City name: McNeal, Population: 181
+362) City name: Kaibab, Population: 181
+364) City name: Cutter, Population: 178
+365) City name: Yuma Proving Ground, Population: 177
+366) City name: Klagetoh, Population: 164
+367) City name: Maish Vaya, Population: 156
+368) City name: Tonto Village, Population: 153
+368) City name: Del Muerto, Population: 153
+370) City name: Shumway, Population: 146
+370) City name: Vaiva Vo, Population: 146
+372) City name: Deer Creek, Population: 145
+372) City name: Drysdale, Population: 145
+374) City name: Beaver Valley, Population: 144
+375) City name: Pinion Pines, Population: 142
+375) City name: Cibola, Population: 142
+377) City name: Hard Rock, Population: 141
+378) City name: Alpine, Population: 136
+379) City name: Mead Ranch, Population: 128
+379) City name: Whispering Pines, Population: 128
+381) City name: Antares, Population: 127
+382) City name: Seba Dalkai, Population: 122
+383) City name: Sehili, Population: 121
+384) City name: Sweet Water Village, Population: 119
+385) City name: Ventana, Population: 116
+386) City name: Ali Chuk, Population: 115
+387) City name: Arlington, Population: 113
+388) City name: Christopher Creek, Population: 112
+389) City name: Copper Hill, Population: 108
+390) City name: Sun Valley, Population: 106
+391) City name: Katherine, Population: 105
+392) City name: Wintersburg, Population: 102
+392) City name: Franklin, Population: 102
+394) City name: Valle, Population: 101
+395) City name: Gu Oidak, Population: 100
+395) City name: Rock House, Population: 100
+397) City name: Pine Lake, Population: 99
+398) City name: Wet Camp Village, Population: 94
+399) City name: East Verde Estates, Population: 93
+400) City name: Moccasin, Population: 91
+400) City name: Bryce, Population: 91
+402) City name: Why, Population: 88
+403) City name: Tumacacori-Carmen, Population: 86
+404) City name: Kohls Ranch, Population: 84
+405) City name: Nolic, Population: 81
+405) City name: Theba, Population: 81
+407) City name: Ali Molina, Population: 79
+408) City name: Chiawuli Tak, Population: 78
+409) City name: Amado, Population: 76
+410) City name: Crozier, Population: 74
+410) City name: Littlefield, Population: 74
+412) City name: Red Rock CDP_B, Population: 71
+413) City name: Campo Bonito, Population: 68
+414) City name: Truxton, Population: 67
+415) City name: Yucca, Population: 65
+416) City name: Flowing Springs, Population: 61
+417) City name: Martinez Lake, Population: 59
+418) City name: Kleindale, Population: 56
+419) City name: Woodruff, Population: 54
+420) City name: Santa Cruz, Population: 53
+421) City name: Utting, Population: 52
+422) City name: Anegam, Population: 50
+423) City name: Beyerville, Population: 49
+424) City name: Wahak Hotrontk, Population: 47
+425) City name: Mojave Ranch Estates, Population: 45
+426) City name: Oatman, Population: 43
+427) City name: Padre Ranchitos, Population: 39
+428) City name: Mormon Lake, Population: 38
+429) City name: Ko Vaya, Population: 37
+430) City name: Haigler Creek, Population: 35
+431) City name: Kaka, Population: 34
+432) City name: Dragoon, Population: 33
+433) City name: Wikieup, Population: 32
+434) City name: El Capitan, Population: 29
+435) City name: Valentine, Population: 28
+436) City name: Summerhaven, Population: 26
+437) City name: Cowlic, Population: 23
+438) City name: Alamo Lake, Population: 20
+439) City name: Washington Park, Population: 19
+440) City name: Charco, Population: 18
+441) City name: Oljato-Monument Valley, Population: 17
+442) City name: Hunter Creek, Population: 16
+443) City name: Oak Springs, Population: 15
+443) City name: Rye, Population: 15
+445) City name: Geronimo Estates, Population: 14
+446) City name: Ali Chukson, Population: 13
+446) City name: Tonopah, Population: 13
+448) City name: Buckshot, Population: 7
+449) City name: Wide Ruins, Population: 6
+
+                      . . . End Loading Data From File
+
+
+ORIGINAL HASH TABLE
+
+Hash Table Status:
+
+Num Items :   22  26  22  27  24  27  29  26  21  16  25  22  27  17  26  24  22  24  22
+             --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+Hash Index:    0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
+
+Max items in one element    :    29
+Min num items in one element:    16
+Range (min to max)          :    13
+Mean num items              : 23.63
+Median node num             :    24
+Total items processed       :   449
+=========================================================================================
+
+End Program
