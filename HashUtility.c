@@ -1,5 +1,7 @@
 #include "HashUtility.h"
 
+const int MINIMUM_HASH_CHARACTERS = 10;
+
 /*
 Name: addHashItem
 Process: adds new item to hash table
@@ -15,7 +17,11 @@ Dependencies: generateHashIndex, addItemAsData
 void addHashItem( HashTableType *hashData, char *cityName, 
                                                     int cityRank, int cityPop )
 {
+    // calculate the has index
+    int index = generateHashIndex( *hashData, cityName );
 
+    /// add the city data to the appropriate array
+    addItemAsData( hashData->table[ index ], cityName, cityRank, cityPop );
 }                                                    
 
 /*
@@ -31,7 +37,27 @@ Dependencies: clearArray, free
 */
 HashTableType *clearHashTable( HashTableType *hashData )
 {
-    return NULL; //stub
+    int index;
+
+    // check if the hash data is empty
+    if( hashData != NULL )
+    {
+        // if it is not, clear each city type array on the hash table
+        for( index = 0; index < hashData->capacity; index++ )
+        {
+            // clear each item
+            clearArray( hashData->table[index] );
+        }
+        // free the hash table itself
+        free( hashData->table );
+
+        // free the hashData
+        free(hashData);
+        
+    }
+
+    // return null
+    return NULL;
 }
 
 /*
@@ -46,7 +72,22 @@ Dependencies: none
 */
 double findMean( int *array, int size )
 {
-    return 0; // stub
+    // initialize variables
+    int index;
+    double sum, mean;
+
+    // iterate through array
+    for( index = 0; index < size; index++ )
+    {
+        // sum value at each array index
+        sum = sum + array[index];
+    }
+
+    // divide sum by size
+    mean = sum / size;
+
+    // return the mean
+    return mean;
 }
 
 /*
@@ -62,6 +103,7 @@ Dependencies: none
 */
 int findMedian( int *array, int size )
 {
+    // choose the sorting method you want to use
     return 0; // stub
 }
 
@@ -81,7 +123,24 @@ Dependencies: privateGetStringLength
 */
 int generateHashIndex( const HashTableType hashData, const char *cityName )
 {
-    return 0; // stub
+    // initializ variables
+    // sum, city name
+            // func: privateGetStringLength
+    int index = 0, sum = 0;
+    int citySize = privateGetStringLength( cityName ); 
+
+    // sum until the city name length is larger than MINIMUM_HASH_CHARACTERS
+    while( index < MINIMUM_HASH_CHARACTERS || index < citySize )
+    {
+        // update the sum
+        sum = sum + (int)cityName[ index % citySize ];
+
+        // increment the index
+        index++;
+    }
+
+    // return the sum % hashData capacity  ????????????????????????????
+    return sum % hashData.capacity;
 }
 
 /*
@@ -104,7 +163,62 @@ Dependencies: openInputFile, initializeHashTable, readStringToDelimiterFromFile,
 HashTableType *getHashDataFromFile( const char *fileName, 
                                                    int capacity, bool verbose )
 {
-    return NULL;
+    // initialize variables
+    char cityName[STD_STR_LEN], junkString[STD_STR_LEN];
+    int cityRank, cityPop, loopCounter = 1;
+
+    // initialize the hash table to null incase we cant open the file
+    HashTableType *hashTable = NULL;
+
+    // check if we can open the file
+    if( openInputFile( fileName ))
+    {
+        // initialize the hash table
+        hashTable = initializeHashTable( capacity );
+
+        // ignore the first line of the file
+        readStringToLineEndFromFile( junkString );
+
+        // prime the loop by reading the first rank
+        cityRank = readIntegerFromFile( );
+
+        // loop until the end of the file
+        while( !checkForEndOfInputFile( ) )
+        {   
+            // get rid of comma after the rank
+            readCharacterFromFile(  );
+
+            // read rest of the data
+            readStringToDelimiterFromFile( COMMA, cityName );
+
+            cityPop = readIntegerFromFile( );
+
+            // check for verbose flag
+            if(verbose)
+            {
+                // print
+                printf( "%5d) City name: %s, Population: %d\n", loopCounter, cityName, cityPop );
+
+            }
+
+            // add the item
+            addHashItem( hashTable, cityName, cityRank, cityPop );
+
+            // increment the loop counter
+            loopCounter = loopCounter + 1; 
+
+            // reprime the loop
+            cityRank = readIntegerFromFile( );           
+
+        }
+        // close the input file
+        closeInputFile( );
+    }
+
+
+        
+    // return the hashTable
+    return hashTable;
 }
 
 /*
@@ -116,11 +230,32 @@ Function output/returned: pointer to newly created hash table
                             (HashTableType *)
 Device input/file: data from HD
 Device output/---: none
-Dependencies: malloc w/sizeof, initializeBST
+Dependencies: malloc w/sizeof, createArray
 */
 HashTableType *initializeHashTable( int capacity )
 {
-    return NULL;
+    // initialize variables
+    HashTableType *hashData;
+    int index;
+
+    // allocate memory for the hash table
+    hashData = ( HashTableType * )malloc( sizeof( HashTableType ) );
+
+    // allocate memory for the array of CityTypeArray pointers
+    hashData->table = ( CityArrayType** )malloc( capacity * sizeof( CityArrayType * ) );
+
+
+    // initialize each cityArrayType
+    for( index = 0; index < capacity; index++ )
+    {
+        hashData->table[index] = createArray( capacity );
+    }
+
+    // set capacity
+    hashData->capacity = capacity;
+
+    // return new hashtable
+    return hashData;
 }
 
 /*
