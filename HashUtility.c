@@ -104,7 +104,51 @@ Dependencies: none
 int findMedian( int *array, int size )
 {
     // choose the sorting method you want to use
-    return 0; // stub
+    
+
+    // initialize variable
+
+    int listIndex, insertIndex, tempInt;
+
+
+    // begin insertion sort
+    for( listIndex = 1; listIndex < size; listIndex++ )
+    {
+        // set insert to list
+        insertIndex = listIndex;
+
+        // copy data from current list indexc into temp int
+        tempInt = array[listIndex];
+
+        // move elements to the right until the correct pos is cound for current
+            // temp
+
+        while( insertIndex > 0 && array[insertIndex - 1] > tempInt )
+        {
+            // shift current element to the right
+            array[insertIndex] = array[insertIndex - 1];
+
+            // move the previous index for comparison
+            insertIndex = insertIndex - 1;
+
+        }
+
+        // put tempkey in its correct sorted position
+        array[insertIndex] = tempInt;
+
+    }
+
+    // check for size mod 2
+    if( size % 2 != 0)
+    {
+        return array[size / 2];
+    }
+    else
+    {
+        return (array[size / 2 - 1] + array[size / 2 + 1]);
+    }
+
+
 }
 
 /*
@@ -272,7 +316,21 @@ Dependencies: generateHashIndex, removeItem
 bool removeHashItem( HashTableType *hashData, 
                                   CityType *removedItem, const char *cityName )
 {
-    return false; // stub
+    // initialize variables
+    int index;
+
+    // check if the hash table is empty or if the city name is empty
+    if( hashData == NULL || cityName == NULL )
+    {
+        return false;
+    }
+
+    // generate the hash index for the city name
+    index = generateHashIndex(*hashData, cityName);
+
+    // retrive the cityArrayType at the generated index
+    return removeItem( hashData->table[index], removedItem, cityName );
+
 }
 
 /*
@@ -290,7 +348,21 @@ Dependencies: generateHashIndex, search, setCityFromStruct, setCityDataToEmpty
 bool searchHashTable( const HashTableType hashData, 
                                     CityType *foundItem, const char *cityName )
 {
-    return false; // stub
+    // find hash index
+    int hashIndex = generateHashIndex( hashData, cityName );
+
+    // check for valid hash index, if not found set to empty and false
+    if( hashIndex >= 0 && hashIndex < hashData.capacity )
+    {
+        // if it is found
+            //conduct remove / search at the array level, return
+            //setCityFromStruct(  );
+            return search( hashData.table[hashIndex], cityName );
+    }
+
+    setCityDataToEmpty( foundItem );
+
+    return false;
 }
 
 /*
@@ -306,10 +378,79 @@ Function output/parameters: none
 Function output/returned: none
 Device input/---: none
 Device output/monitor: hash data status displayed as specified
-Dependencies: malloc w/sizeof, countTreeNodes, printf, 
+Dependencies: malloc w/sizeof, , printf, 
               findMean, findMedian, free
 */
 void showHashTableStatus( const HashTableType hashData )
 {
-    
+    // initialize variables
+    char numString[HUGE_STR_LEN];
+    char dividerString[HUGE_STR_LEN];
+    char indexString[HUGE_STR_LEN];
+    int *array = (int *)malloc(hashData.capacity * sizeof(int));
+    int median, index;
+    double mean;
+    int min = hashData.table[0]->size;
+    int max = hashData.table[0]->size;
+
+    for( index = 0; index < hashData.capacity; index++ )
+    {
+        array[index] = hashData.table[index]->size;
+
+        // numString
+        if( index == 0 )
+        {
+            sprintf( numString, " %3d", array[index] );
+            sprintf( indexString, " %3d", index );
+            sprintf( dividerString, " ---" );
+
+        }
+        else
+        {
+            sprintf( numString, "%s %3d", numString, array[index] );
+            sprintf( indexString, "%s %3d", indexString, index );
+            sprintf( dividerString, "%s ---", dividerString );
+        }
+
+        if( hashData.table[index]->size < min )
+        {
+            min = hashData.table[index]->size;
+        }
+        if( hashData.table[index]->size > max )
+        {
+            max = hashData.table[index]->size;
+        }
+
+
+    }
+
+    printf( "Num items : %s\n", numString );
+    printf( "            %s\n", dividerString );
+    printf( "Hash index: %s\n", indexString );
+
+
+    median = findMedian( array, hashData.capacity );
+    mean = findMean( array, hashData.capacity );
+
+    printf("\nMax items in one element    :%6d\n", max);
+    printf("Min num items in one element:%6d\n", min);
+    printf("Range (min to max)          :%6d\n", (max-min));
+    printf( "Mean num items              :%6.2lf\n", mean );
+    printf( "Median node num             :%6d\n", median );
+    printf("Total items processed       :%6d\n", hashData.capacity);
+
+
+
 }
+
+
+// display data, THEN do mean and median
+/*
+Max items in one element    :    29
+Min num items in one element:    16
+Range (min to max)          :    13
+Mean num items              : 23.63
+Median node num             :    24
+Total items processed       :   449
+
+*/
