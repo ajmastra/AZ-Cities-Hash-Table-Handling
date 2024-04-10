@@ -104,8 +104,6 @@ Dependencies: none
 int findMedian( int *array, int size )
 {
     // choose the sorting method you want to use
-    
-
     // initialize variable
 
     int listIndex, insertIndex, tempInt;
@@ -138,11 +136,14 @@ int findMedian( int *array, int size )
 
     }
 
-    // check for size mod 2
+    // if the size is not divisible evenly by two, we simply just 
+                                            // return index divide size by2
     if( size % 2 != 0)
     {
         return array[size / 2];
     }
+    // otherwise, the list is even, so we must grab the two middle values
+                                                            // and divide by two
     else
     {
         return (array[size / 2 - 1] + array[size / 2 + 1]);
@@ -241,7 +242,8 @@ HashTableType *getHashDataFromFile( const char *fileName,
             if(verbose)
             {
                 // print
-                printf( "%5d) City name: %s, Population: %d\n", loopCounter, cityName, cityPop );
+                printf( "%5d) City name: %s, Population: %d\n", loopCounter, 
+                                                            cityName, cityPop );
 
             }
 
@@ -286,7 +288,8 @@ HashTableType *initializeHashTable( int capacity )
     hashData = ( HashTableType * )malloc( sizeof( HashTableType ) );
 
     // allocate memory for the array of CityTypeArray pointers
-    hashData->table = ( CityArrayType** )malloc( capacity * sizeof( CityArrayType * ) );
+    hashData->table = ( CityArrayType** )malloc( capacity * 
+                                                    sizeof( CityArrayType * ) );
 
 
     // initialize each cityArrayType
@@ -317,7 +320,7 @@ bool removeHashItem( HashTableType *hashData,
                                   CityType *removedItem, const char *cityName )
 {
     // initialize variables
-    int index;
+    int hashIndex;
 
     // check if the hash table is empty or if the city name is empty
     if( hashData == NULL || cityName == NULL )
@@ -326,10 +329,10 @@ bool removeHashItem( HashTableType *hashData,
     }
 
     // generate the hash index for the city name
-    index = generateHashIndex(*hashData, cityName);
+    hashIndex = generateHashIndex(*hashData, cityName);
 
     // retrive the cityArrayType at the generated index
-    return removeItem( hashData->table[index], removedItem, cityName );
+    return removeItem( hashData->table[hashIndex], removedItem, cityName );
 
 }
 
@@ -348,20 +351,33 @@ Dependencies: generateHashIndex, search, setCityFromStruct, setCityDataToEmpty
 bool searchHashTable( const HashTableType hashData, 
                                     CityType *foundItem, const char *cityName )
 {
+    // initialize search result var
+    int searchResult;
+
     // find hash index
     int hashIndex = generateHashIndex( hashData, cityName );
 
     // check for valid hash index, if not found set to empty and false
     if( hashIndex >= 0 && hashIndex < hashData.capacity )
     {
-        // if it is found
-            //conduct remove / search at the array level, return
-            //setCityFromStruct(  );
-            return search( hashData.table[hashIndex], cityName );
+        // search for the item and set to the potential match
+        searchResult = search( hashData.table[hashIndex], cityName );
+        // if the potentional match is found
+        if( searchResult != -1)
+        {
+            // set the potentialMatch to the found item
+            setCityFromStruct( foundItem, 
+                                hashData.table[hashIndex]->array[searchResult]);
+            
+            // return true
+            return true;
+        }
     }
 
+    // otherwise, set the found item to empty
     setCityDataToEmpty( foundItem );
 
+    // return false
     return false;
 }
 
@@ -384,73 +400,82 @@ Dependencies: malloc w/sizeof, , printf,
 void showHashTableStatus( const HashTableType hashData )
 {
     // initialize variables
-    char numString[HUGE_STR_LEN];
-    char dividerString[HUGE_STR_LEN];
-    char indexString[HUGE_STR_LEN];
-    int *array = (int *)malloc(hashData.capacity * sizeof(int));
+        // dynamically allocate an array for storing num items
+    int *arrayItems = (int *)malloc(hashData.capacity * sizeof(int));
     int median, index;
     double mean;
+    // initialize min and max to the first index in hashData
     int min = hashData.table[0]->size;
     int max = hashData.table[0]->size;
 
+    // print num items
+    printf("\nNum Items: ");
+
+    // iterate through hash table, adding items to the temparray
+        // printing each number along the way
     for( index = 0; index < hashData.capacity; index++ )
     {
-        array[index] = hashData.table[index]->size;
+        // add the current item size to the temp array at the same index
+        arrayItems[index] = hashData.table[index]->size;
 
-        // numString
-        if( index == 0 )
-        {
-            sprintf( numString, " %3d", array[index] );
-            sprintf( indexString, " %3d", index );
-            sprintf( dividerString, " ---" );
-
-        }
-        else
-        {
-            sprintf( numString, "%s %3d", numString, array[index] );
-            sprintf( indexString, "%s %3d", indexString, index );
-            sprintf( dividerString, "%s ---", dividerString );
-        }
-
+        // if the current size is less than the min
         if( hashData.table[index]->size < min )
         {
+            // set min to current index
             min = hashData.table[index]->size;
         }
+        // if the current size is more than the max
         if( hashData.table[index]->size > max )
         {
+            // set max to current index
             max = hashData.table[index]->size;
         }
 
-
+        // print current index number of items as we iterate through the loop
+        printf(" %3d", arrayItems[index]);
     }
 
-    printf( "Num items : %s\n", numString );
-    printf( "            %s\n", dividerString );
-    printf( "Hash index: %s\n", indexString );
+    // printf new line before the divider
+    printf("\n           ");
 
+    // divider loop: prints number of dividers as ther are indices
+    for( index = 0; index < hashData.capacity; index++ )
+    {
+        // print divider
+        printf(" ---");
+    }
 
-    median = findMedian( array, hashData.capacity );
-    mean = findMean( array, hashData.capacity );
+    printf("\nHash index: ");
 
-    printf("\nMax items in one element    :%6d\n", max);
+    // index loop
+    for( index = 0; index < hashData.capacity; index++ )
+    {
+        // print current index
+        printf("%3d ", index);
+    }
+
+    // find the mean and median
+    
+    mean = findMean( arrayItems, hashData.capacity );
+    median = findMedian( arrayItems, hashData.capacity );
+
+    // display the max, min, range, mean, median, and total items
+    printf("\n\nMax items in one element    :%6d\n", max);
     printf("Min num items in one element:%6d\n", min);
-    printf("Range (min to max)          :%6d\n", (max-min));
+    printf("Range (min to max)          :%6d\n", (max - min));
     printf( "Mean num items              :%6.2lf\n", mean );
     printf( "Median node num             :%6d\n", median );
     printf("Total items processed       :%6d\n", hashData.capacity);
 
-
+    // display the bottom divider ( scaled properly )
+    for(index = 1; index < hashData.capacity; index++)
+    {
+        printf("=====");
+    }
+    // newline before end program
+    printf("\n");
+    
+    // free the temporary array
+    free(arrayItems);
 
 }
-
-
-// display data, THEN do mean and median
-/*
-Max items in one element    :    29
-Min num items in one element:    16
-Range (min to max)          :    13
-Mean num items              : 23.63
-Median node num             :    24
-Total items processed       :   449
-
-*/
